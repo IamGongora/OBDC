@@ -93,15 +93,6 @@ public class frmUsuario extends javax.swing.JFrame {
         Image EscalB = origB.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnBuscar.setIcon(new ImageIcon(EscalB));
         btnBuscar.setToolTipText("Nueva Busqueda");
-        //valores
-        lblSubtotal.setText("SubTotal: ");
-        lblDescuento.setText("Descuento: ");
-        lblIva.setText("Iva: ");
-        lblTotal.setText("Total: ");
-        txtSubtotal.setText("Subtotal");
-        txtDescuento.setText("Descuento");
-        txtIva.setText("Iva");
-        txtTotal.setText("Total");
         //definir titulo tabla
         
         //definir jcombobox
@@ -138,6 +129,7 @@ public class frmUsuario extends javax.swing.JFrame {
         lblCiudad = new javax.swing.JLabel();
         jfFoto = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
+        btnFoto = new javax.swing.JButton();
         jfDatos = new javax.swing.JPanel();
         lblCC = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
@@ -156,15 +148,6 @@ public class frmUsuario extends javax.swing.JFrame {
         btnClean = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        jfValores = new javax.swing.JPanel();
-        lblSubtotal = new javax.swing.JLabel();
-        lblDescuento = new javax.swing.JLabel();
-        lblIva = new javax.swing.JLabel();
-        lblTotal = new javax.swing.JLabel();
-        txtSubtotal = new javax.swing.JTextField();
-        txtDescuento = new javax.swing.JTextField();
-        txtIva = new javax.swing.JTextField();
-        txtTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -210,13 +193,19 @@ public class frmUsuario extends javax.swing.JFrame {
 
         lblFoto.setText("jLabel1");
 
+        btnFoto.setText("jButton1");
+
         javax.swing.GroupLayout jfFotoLayout = new javax.swing.GroupLayout(jfFoto);
         jfFoto.setLayout(jfFotoLayout);
         jfFotoLayout.setHorizontalGroup(
             jfFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfFotoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                .addGroup(jfFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addGroup(jfFotoLayout.createSequentialGroup()
+                        .addComponent(btnFoto)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jfFotoLayout.setVerticalGroup(
@@ -224,7 +213,9 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(jfFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFoto)
+                .addContainerGap())
         );
 
         lblCC.setText("jLabel1");
@@ -328,6 +319,11 @@ public class frmUsuario extends javax.swing.JFrame {
         btnNuevo.setText("jButton1");
 
         btnClean.setText("jButton2");
+        btnClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanActionPerformed(evt);
+            }
+        });
 
         btnAceptar.setText("jButton3");
 
@@ -337,69 +333,6 @@ public class frmUsuario extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        lblSubtotal.setText("jLabel1");
-
-        lblDescuento.setText("jLabel2");
-
-        lblIva.setText("jLabel3");
-
-        lblTotal.setText("jLabel4");
-
-        txtSubtotal.setText("jTextField1");
-
-        txtDescuento.setText("jTextField2");
-
-        txtIva.setText("jTextField3");
-
-        txtTotal.setText("jTextField4");
-
-        javax.swing.GroupLayout jfValoresLayout = new javax.swing.GroupLayout(jfValores);
-        jfValores.setLayout(jfValoresLayout);
-        jfValoresLayout.setHorizontalGroup(
-            jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jfValoresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jfValoresLayout.createSequentialGroup()
-                        .addComponent(lblSubtotal)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfValoresLayout.createSequentialGroup()
-                        .addComponent(lblDescuento)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfValoresLayout.createSequentialGroup()
-                        .addComponent(lblIva)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfValoresLayout.createSequentialGroup()
-                        .addComponent(lblTotal)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(72, Short.MAX_VALUE))
-        );
-        jfValoresLayout.setVerticalGroup(
-            jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jfValoresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSubtotal)
-                    .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescuento)
-                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIva)
-                    .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jfValoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTotal)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jfLayout = new javax.swing.GroupLayout(jf);
         jf.setLayout(jfLayout);
@@ -413,7 +346,7 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                         .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfLayout.createSequentialGroup()
                         .addComponent(btnNuevo)
@@ -423,8 +356,7 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addComponent(btnSalir)
                         .addGap(18, 18, 18)
                         .addComponent(btnAceptar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                        .addComponent(jfValores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jfLayout.setVerticalGroup(
@@ -432,23 +364,21 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(jfLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jfLayout.createSequentialGroup()
                         .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jfValores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(jfLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnNuevo)
-                            .addComponent(btnClean)
-                            .addComponent(btnSalir)
-                            .addComponent(btnAceptar))))
+                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 141, Short.MAX_VALUE)
+                .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnNuevo)
+                    .addComponent(btnClean)
+                    .addComponent(btnSalir)
+                    .addComponent(btnAceptar))
                 .addContainerGap())
         );
 
@@ -475,6 +405,10 @@ public class frmUsuario extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCleanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -515,6 +449,7 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnClean;
+    private javax.swing.JButton btnFoto;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;
@@ -522,31 +457,22 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jfCabecera;
     private javax.swing.JPanel jfDatos;
     private javax.swing.JPanel jfFoto;
-    private javax.swing.JPanel jfValores;
     private javax.swing.JLabel lblCC;
     private javax.swing.JLabel lblCiudad;
-    private javax.swing.JLabel lblDescuento;
     private javax.swing.JLabel lblDir;
     private javax.swing.JLabel lblDirEmpresa;
     private javax.swing.JLabel lblEmpresa;
     private javax.swing.JLabel lblFoto;
-    private javax.swing.JLabel lblIva;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPago;
-    private javax.swing.JLabel lblSubtotal;
     private javax.swing.JLabel lblTel;
     private javax.swing.JLabel lblTelEmpresa;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTotal;
     private javax.swing.JComboBox<String> pago;
     private javax.swing.JTable tbDatos;
     private javax.swing.JTextField txtCC;
-    private javax.swing.JTextField txtDescuento;
     private javax.swing.JTextField txtDir;
-    private javax.swing.JTextField txtIva;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSubtotal;
     private javax.swing.JTextField txtTel;
-    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
