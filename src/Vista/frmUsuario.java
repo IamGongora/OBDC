@@ -93,8 +93,11 @@ public class frmUsuario extends javax.swing.JFrame {
         Image EscalB = origB.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnBuscar.setIcon(new ImageIcon(EscalB));
         btnBuscar.setToolTipText("Nueva Busqueda");
+<<<<<<< HEAD
         //valores
 
+=======
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         //definir titulo tabla
         
         //definir jcombobox
@@ -131,6 +134,10 @@ public class frmUsuario extends javax.swing.JFrame {
         lblCiudad = new javax.swing.JLabel();
         jfFoto = new javax.swing.JPanel();
         lblFoto = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        btnFoto = new javax.swing.JButton();
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         jfDatos = new javax.swing.JPanel();
         lblCC = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
@@ -194,13 +201,26 @@ public class frmUsuario extends javax.swing.JFrame {
 
         lblFoto.setText("jLabel1");
 
+<<<<<<< HEAD
+=======
+        btnFoto.setText("jButton1");
+
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         javax.swing.GroupLayout jfFotoLayout = new javax.swing.GroupLayout(jfFoto);
         jfFoto.setLayout(jfFotoLayout);
         jfFotoLayout.setHorizontalGroup(
             jfFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jfFotoLayout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+=======
+                .addGroup(jfFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addGroup(jfFotoLayout.createSequentialGroup()
+                        .addComponent(btnFoto)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                 .addContainerGap())
         );
         jfFotoLayout.setVerticalGroup(
@@ -208,7 +228,13 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(jfFotoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(28, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFoto)
+                .addContainerGap())
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         );
 
         lblCC.setText("jLabel1");
@@ -312,6 +338,14 @@ public class frmUsuario extends javax.swing.JFrame {
         btnNuevo.setText("jButton1");
 
         btnClean.setText("jButton2");
+<<<<<<< HEAD
+=======
+        btnClean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCleanActionPerformed(evt);
+            }
+        });
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
 
         btnAceptar.setText("jButton3");
 
@@ -337,13 +371,20 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                         .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfLayout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(148, 148, 148)
+=======
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                         .addComponent(btnNuevo)
                         .addGap(18, 18, 18)
                         .addComponent(btnClean)
                         .addGap(18, 18, 18)
                         .addComponent(btnSalir)
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+                        .addGap(18, 18, 18)
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                         .addComponent(btnAceptar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -353,6 +394,7 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(jfLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
                     .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jfLayout.createSequentialGroup()
                         .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,12 +403,28 @@ public class frmUsuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
+=======
+                    .addGroup(jfLayout.createSequentialGroup()
+                        .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jfLayout.createSequentialGroup()
+                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 141, Short.MAX_VALUE)
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo)
                     .addComponent(btnClean)
                     .addComponent(btnSalir)
                     .addComponent(btnAceptar))
+<<<<<<< HEAD
                 .addContainerGap(86, Short.MAX_VALUE))
+=======
+                .addContainerGap())
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -393,6 +451,13 @@ public class frmUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCleanActionPerformed
+
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
     /**
      * @param args the command line arguments
      */
@@ -432,6 +497,10 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnClean;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton btnFoto;
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;

@@ -40,9 +40,12 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jfFondo">
+<<<<<<< HEAD
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
+=======
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
 
       <Layout>
         <DimensionLayout dim="0">

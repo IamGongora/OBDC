@@ -54,13 +54,20 @@
                           <Component id="jfFoto" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                           <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+=======
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                           <Component id="btnNuevo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnClean" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <EmptySpace max="-2" attributes="0"/>
+=======
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                           <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -74,6 +81,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Component id="jfFoto" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jfCabecera" min="-2" max="-2" attributes="0"/>
@@ -84,13 +92,32 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jfCabecera" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jfDatos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jfFoto" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" pref="141" max="32767" attributes="0"/>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnClean" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSalir" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="86" max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
               </Group>
           </Group>
         </DimensionLayout>
@@ -165,9 +192,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblFoto" pref="131" max="32767" attributes="0"/>
+=======
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblFoto" alignment="0" pref="131" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnFoto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -177,7 +216,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblFoto" min="-2" pref="183" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <EmptySpace pref="28" max="32767" attributes="0"/>
+=======
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnFoto" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
                   </Group>
               </Group>
             </DimensionLayout>
@@ -188,6 +233,14 @@
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
+<<<<<<< HEAD
+=======
+            <Component class="javax.swing.JButton" name="btnFoto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jButton1"/>
+              </Properties>
+            </Component>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jfDatos">
@@ -366,6 +419,12 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton2"/>
           </Properties>
+<<<<<<< HEAD
+=======
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCleanActionPerformed"/>
+          </Events>
+>>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
         </Component>
         <Component class="javax.swing.JButton" name="btnAceptar">
           <Properties>
