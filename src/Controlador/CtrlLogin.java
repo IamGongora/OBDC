@@ -5,6 +5,7 @@ import Modelo.ModelLogin;
 import Ppal.ClasePpal;
 import static Vista.frmLogin.txtPassword;
 import static Vista.frmLogin.txtUsuario;
+import Vista.frmUsuario;
 
 
 import java.awt.event.ActionEvent;
@@ -14,19 +15,31 @@ import javax.swing.JOptionPane;
 
 
 public class CtrlLogin implements ActionListener {
-     frmLogin vista;
-     ModelLogin modelo;
+     frmLogin formLogin;
+     ModelLogin ModelLogin;
      
      public CtrlLogin(frmLogin Vistalogin, ModelLogin ModelLogin) {
-        this.vista = Vistalogin;
-        this.modelo = ModelLogin;
+        this.formLogin = Vistalogin;
+        this.ModelLogin = ModelLogin;
 
         frmLogin.btnLogeo.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String CORREO = vista.txtUsuario.getText();
-        String PASSWORD =  new String(vista.txtPassword.getPassword());
+        
+        String CORREO = txtUsuario.getText();
+        String PASSWORD = txtPassword.getText();
+        if (!CORREO.equals("")||!PASSWORD.equals("")) 
+        {
+            try {
+                
+            } catch (Exception e) {
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"DATOS INCORRECTOS");
+        }
+        
     }
 }

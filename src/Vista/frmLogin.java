@@ -212,7 +212,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnLogeo;
-    private javax.swing.JPanel jfFondo;
+    public static javax.swing.JPanel jfFondo;
     private javax.swing.JPanel jfIngreso;
     private javax.swing.JLabel jlEmpresa;
     private javax.swing.JLabel jlImUser;
