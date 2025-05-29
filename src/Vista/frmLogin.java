@@ -5,20 +5,19 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Controlador.ValLogin;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author PC
  */
 public class frmLogin extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form frmLogin
      */
     public frmLogin() {
         initComponents();
-        
 
         jlEmpresa.setText("Restaurante Cali");
         jlIniSesion.setText("Iniciar Sesion");
@@ -26,22 +25,20 @@ public class frmLogin extends javax.swing.JFrame {
         ImageIcon ImgUser = new ImageIcon(getClass().getResource("/imgs/cuenta.png"));
         Image EscalUser = ImgUser.getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT);
         jlImUser.setIcon(new ImageIcon(EscalUser));
-        
+
         jlUsuario.setText("Usuario");
         txtUsuario.setText("");
         txtUsuario.setToolTipText("Escriba su usuario");
-        txtUsuario.setPreferredSize(new Dimension(150,30));
+        txtUsuario.setPreferredSize(new Dimension(150, 30));
         jlPassword.setText("Contraseña");
         txtPassword.setText("");
         txtPassword.setToolTipText("Escriba su contraseña");
-        txtPassword.setPreferredSize(new Dimension(150,30));
+        txtPassword.setPreferredSize(new Dimension(150, 30));
 
         btnLogeo.setText("Ingresar");
         btnLogeo.setToolTipText("Click Para Ingresar");
-       
+
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -176,7 +173,19 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogeoActionPerformed
-        ValLogin iniLog = new ValLogin();
+        String usuario = txtUsuario.getText().trim();
+        String clave = txtPassword.getText().trim();
+
+        if (usuario.isEmpty() || clave.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Complete todos los campos");
+            return;
+        }
+        
+        if (ValLogin.validarUsr(usuario, clave)) {
+            JOptionPane.showMessageDialog(null, "Login exitoso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Coma mierda");
+        }
     }//GEN-LAST:event_btnLogeoActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed

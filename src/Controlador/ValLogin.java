@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.MySqlConecction;
 import Vista.frmLogin;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,36 +11,42 @@ import javax.swing.JOptionPane;
 
 public class ValLogin {
 
-    frmLogin login = new frmLogin();
-    private static String getUser;
-    private static String sqlUsuario;
-    private static String sqlContrasena;
+    private static frmLogin login = new frmLogin();
+    private static String sqlQuery;
     private static JOptionPane jp = new JOptionPane();
+    private static ResultSet res = null;
+    private static PreparedStatement stmt = null;
+    private static Connection conexion = null;
 
-    public static boolean validarUsr() {
+    public static boolean validarUsr(String usuario, String clave) {
         MySqlConecction sql = new MySqlConecction();
-        getUser = login.txtUsuario.getText();
-        sqlUsuario = "SELECT usuario FROM datos WHERE usuario = " + getUser + ";";
-        sqlContrasena = "SELECT contrasena FROM datos WHERE usuario = '" + getUser + "';";
-        try (Connection conexion = sql.conectar();
-                Statement stmt = conexion.createStatement();
-                ResultSet res = stmt.executeQuery(sqlContrasena)) {
-
-            if (res.toString().equals(login.txtPassword.getText())) {
-                JOptionPane.showMessageDialog(null, "Correcto!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario o contrasena incorrecta");
-            }
-
-            sql.cerrarConexion(conexion);
+        
+    
+        try {
+            conexion = sql.conectar();
+            sqlQuery = "SELECT usuario FROM datos WHERE usuario = ? AND contrasena = ?";
+            stmt = conexion.prepareStatement(sqlQuery);
+            stmt.setString(1, usuario);
+            stmt.setString(2, clave);
+            res = stmt.executeQuery();
+            return res.next();
 
         } catch (SQLException e) {
-            System.out.println("Error en consulta SELECT: " + e.getMessage());
-
+            System.out.println("Error en validar usuario: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if(res != null) res.close();
+                if(stmt != null) stmt.close();
+                if(conexion != null) conexion.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public ValLogin() {
-
+        
     }
 }
