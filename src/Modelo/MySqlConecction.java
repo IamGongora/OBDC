@@ -25,7 +25,19 @@ public class MySqlConecction {
             System.err.println("Error en la conexion a la BD.");
             e.printStackTrace();
         }
-        
+
         return conexion;
+    }
+
+    public static void cerrarConexion(Connection conexion) {
+        try {
+            if (conexion != null && !conexion.isClosed()) {
+                conexion.close();
+                System.out.println("Conexion cerrada");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al cerrar la conexion");
+            e.printStackTrace();
+        }
     }
 }
