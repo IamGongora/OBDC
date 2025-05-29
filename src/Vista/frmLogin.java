@@ -36,12 +36,6 @@ public class frmLogin extends javax.swing.JFrame {
 
         btnLogeo.setText("Ingresar");
         btnLogeo.setToolTipText("Click Para Ingresar");
-<<<<<<< HEAD
-        btnLogeo.setMnemonic(0);
-        
-
-=======
->>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
        
     }
     
@@ -215,11 +209,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnLogeo;
-<<<<<<< HEAD
-    public static javax.swing.JPanel jfFondo;
-=======
     private javax.swing.JPanel jfFondo;
->>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
     private javax.swing.JPanel jfIngreso;
     private javax.swing.JLabel jlEmpresa;
     private javax.swing.JLabel jlImUser;

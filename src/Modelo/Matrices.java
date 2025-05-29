@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,25 +18,3 @@ public class Matrices {
     public static String [] Tpago = {"Efectivo","Credito"};//Tipo de Pago
     //matriz de imagenes para iconos
 }
-=======
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Modelo;
-
-/**
- *
- * @author PC
- */
-public class Matrices {
-    //tabla
-    public static String [] titulos ={"Codigo","Descripcion","Valor Unitario","Cantidad","Precio Total"};
-    public static String [][] datos = new String [10][5];
-    public static String [][] aux = new String [10][5];
-    //jcombobox
-    public static String [] Tpago = {"Efectivo","Credito"};//Tipo de Pago
-    //matriz de imagenes para iconos
-}
->>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d

@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-package Modelo;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-
-public class ModelLogin {
-           
-
-
-
-
-    
-}
-=======
 package Modelo;
 
 import java.sql.Connection;
@@ -43,4 +26,3 @@ public class ModelLogin {
        
     
 }
->>>>>>> 629b0a4a0a07ad412eb64cf4714f8018caa7ca5d
