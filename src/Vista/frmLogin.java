@@ -4,12 +4,14 @@ import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import Controlador.ValLogin;
 
 /**
  *
  * @author PC
  */
 public class frmLogin extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form frmLogin
@@ -74,6 +76,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtPassword.setText("jPasswordField1");
 
         txtUsuario.setText("jTextField1");
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         btnLogeo.setText("jButton1");
         btnLogeo.addActionListener(new java.awt.event.ActionListener() {
@@ -169,8 +176,12 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogeoActionPerformed
-        // TODO add your handling code here:
+        ValLogin iniLog = new ValLogin();
     }//GEN-LAST:event_btnLogeoActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
