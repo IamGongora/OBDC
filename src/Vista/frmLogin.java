@@ -1,7 +1,9 @@
 package Vista;
 
+import static Modelo.Matrices.Icons;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -17,7 +19,9 @@ public class frmLogin extends javax.swing.JFrame {
     public frmLogin() {
         initComponents();
         
-
+        setTitle("Login");
+        Image iconLogin=Toolkit.getDefaultToolkit().getImage(getClass().getResource(Icons[0]));
+        setIconImage(iconLogin);
         jlEmpresa.setText("Restaurante Cali");
         jlIniSesion.setText("Iniciar Sesion");
         jlImUser.setText("");

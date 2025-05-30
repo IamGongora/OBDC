@@ -77,13 +77,10 @@
                           <Component id="jfCabecera" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jfDatos" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jfFoto" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jfFoto" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" pref="141" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -197,6 +194,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="btnFoto">
               <Properties>

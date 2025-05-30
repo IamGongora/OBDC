@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.ControladorUser;
 import static Modelo.Matrices.Tpago;
 import static Modelo.Matrices.datos;
 import static Modelo.Matrices.titulos;
@@ -23,11 +24,11 @@ import javax.swing.border.LineBorder;
  */
 public class frmUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmUsuario
-     */
+    private ControladorUser ctrlUser;
     public frmUsuario() {
         initComponents();
+        ctrlUser = new ControladorUser(this);
+        setTitle("PANEL DE USUARIOS");
         JTable tbDatos = new JTable (datos,titulos);
         JFrame jf = new JFrame("Factura de venta");
         jf.setLayout(null);//ELIMINAMOS EL LAYOUT
@@ -60,9 +61,16 @@ public class frmUsuario extends javax.swing.JFrame {
         lblPago.setText("Forma de pago");
         
         //Jpanel de la Foto
-        lblFoto.setText("Foto Cliente");
+        lblFoto.setText("");
+        lblFoto.setToolTipText("Aqui va foto del cliente");
         jfFoto.setBorder(new LineBorder(Color.black));
-        
+        //configuracion boton FileChooser
+        btnFoto.setText("");
+        btnFoto.setToolTipText("Carga la foto");
+        ImageIcon oriCam = new ImageIcon(getClass().getResource("/imgs/camera.png"));
+        Image EscalCam = oriCam.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
+        btnFoto.setIcon(new ImageIcon(EscalCam));
+        btnFoto.addActionListener(ctrlUser);
         //configuracion boton aceptar
         btnAceptar.setText("");
         ImageIcon origA = new ImageIcon(getClass().getResource("/imgs/aceptar.png"));
@@ -367,11 +375,9 @@ public class frmUsuario extends javax.swing.JFrame {
                     .addGroup(jfLayout.createSequentialGroup()
                         .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jfLayout.createSequentialGroup()
-                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)))
+                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 141, Short.MAX_VALUE)
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -462,7 +468,7 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblDir;
     private javax.swing.JLabel lblDirEmpresa;
     private javax.swing.JLabel lblEmpresa;
-    private javax.swing.JLabel lblFoto;
+    public static javax.swing.JLabel lblFoto;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPago;
     private javax.swing.JLabel lblTel;

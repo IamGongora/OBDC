@@ -17,4 +17,7 @@ public class Matrices {
     //jcombobox
     public static String [] Tpago = {"Efectivo","Credito"};//Tipo de Pago
     //matriz de imagenes para iconos
+    public static String [] Icons = {
+    "/imgs/cuenta.png"
+    };
 }
