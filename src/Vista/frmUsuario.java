@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorUser;
+import static Controlador.ControladorUser.cantidad;
 import static Modelo.Matrices.Tpago;
 import static Modelo.Matrices.datos;
 import static Modelo.Matrices.titulos;
@@ -25,16 +26,17 @@ import javax.swing.border.LineBorder;
 public class frmUsuario extends javax.swing.JFrame {
 
     private ControladorUser ctrlUser;
+
     public frmUsuario() {
         initComponents();
         ctrlUser = new ControladorUser(this);
         setTitle("PANEL DE USUARIOS");
-        JTable tbDatos = new JTable (datos,titulos);
+        JTable tbDatos = new JTable(datos, titulos);
         JFrame jf = new JFrame("Factura de venta");
         jf.setLayout(null);//ELIMINAMOS EL LAYOUT
         jf.setVisible(true);
-        Dimension d = new Dimension ();
-        JScrollPane scroll = new JScrollPane ();
+        Dimension d = new Dimension();
+        JScrollPane scroll = new JScrollPane();
 
         //jf.setVisible(true);
         //Cabecera
@@ -46,20 +48,18 @@ public class frmUsuario extends javax.swing.JFrame {
         //Datos
         lblCC.setText("Cedula: ");
         txtCC.setText("");
-        txtCC.setPreferredSize(new Dimension(150,30));
+        txtCC.setPreferredSize(new Dimension(150, 30));
         lblName.setText("Nombre Completo: ");
         txtName.setText("");
-        txtName.setPreferredSize(new Dimension(150,30));
+        txtName.setPreferredSize(new Dimension(150, 30));
         lblTel.setText("Telefono: ");
         txtTel.setText("");
-        txtTel.setPreferredSize(new Dimension(150,30));
+        txtTel.setPreferredSize(new Dimension(150, 30));
         lblDir.setText("Direccion: ");
         txtDir.setText("");
-        txtDir.setPreferredSize(new Dimension(150,30));
-        btnBuscar.setText("Buscar");
-        btnBuscar.setToolTipText("Buscar");
+        txtDir.setPreferredSize(new Dimension(150, 30));
         lblPago.setText("Forma de pago");
-        
+
         //Jpanel de la Foto
         lblFoto.setText("");
         lblFoto.setToolTipText("Aqui va foto del cliente");
@@ -70,7 +70,7 @@ public class frmUsuario extends javax.swing.JFrame {
         ImageIcon oriCam = new ImageIcon(getClass().getResource("/imgs/camera.png"));
         Image EscalCam = oriCam.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnFoto.setIcon(new ImageIcon(EscalCam));
-        btnFoto.addActionListener(ctrlUser);
+        //btnFoto.addActionListener(ctrlUser);
         //configuracion boton aceptar
         btnAceptar.setText("");
         ImageIcon origA = new ImageIcon(getClass().getResource("/imgs/aceptar.png"));
@@ -95,17 +95,19 @@ public class frmUsuario extends javax.swing.JFrame {
         Image EscalS = origS.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnSalir.setIcon(new ImageIcon(EscalS));
         btnSalir.setToolTipText("Salir");
+
         //Configuracion boton buscar
         btnBuscar.setText("");
         ImageIcon origB = new ImageIcon(getClass().getResource("/imgs/buscar.png"));
         Image EscalB = origB.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnBuscar.setIcon(new ImageIcon(EscalB));
-        btnBuscar.setToolTipText("Nueva Busqueda");
+        btnBuscar.setToolTipText("Buscar");
+        //btnBuscar.addActionListener(ctrlUser);
         //definir titulo tabla
-        
+
         //definir jcombobox
         pago.removeAllItems();
-        for (String forma : Tpago){
+        for (String forma : Tpago) {
             pago.addItem(forma);
         };
         //opcion de que las cabezas sean estaticas
@@ -114,9 +116,7 @@ public class frmUsuario extends javax.swing.JFrame {
         scroll.setBounds(10, 330, 685, 150);
         //posicion de la grilla
         jf.add(scroll);
-        
-         
-        
+
     }
 
     /**
@@ -248,6 +248,11 @@ public class frmUsuario extends javax.swing.JFrame {
         txtDir.setText("jTextField4");
 
         btnBuscar.setText("jButton1");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         pago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -379,13 +384,13 @@ public class frmUsuario extends javax.swing.JFrame {
                     .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo)
                     .addComponent(btnClean)
                     .addComponent(btnSalir)
                     .addComponent(btnAceptar))
-                .addContainerGap())
+                .addGap(67, 67, 67))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -415,6 +420,10 @@ public class frmUsuario extends javax.swing.JFrame {
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCleanActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -453,9 +462,9 @@ public class frmUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnBuscar;
+    public static javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnClean;
-    private javax.swing.JButton btnFoto;
+    public static javax.swing.JButton btnFoto;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;
@@ -476,9 +485,9 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JComboBox<String> pago;
     private javax.swing.JTable tbDatos;
-    private javax.swing.JTextField txtCC;
-    private javax.swing.JTextField txtDir;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtTel;
+    public static javax.swing.JTextField txtCC;
+    public static javax.swing.JTextField txtDir;
+    public static javax.swing.JTextField txtName;
+    public static javax.swing.JTextField txtTel;
     // End of variables declaration//GEN-END:variables
 }

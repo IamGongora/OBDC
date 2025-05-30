@@ -10,14 +10,15 @@ package Modelo;
  * @author PC
  */
 public class Matrices {
+
     //tabla
-    public static String [] titulos ={"Codigo","Descripcion","Valor Unitario","Cantidad","Precio Total"};
-    public static String [][] datos = new String [10][5];
-    public static String [][] aux = new String [10][5];
+    public static String[] titulos = {"Codigo", "Descripcion", "Valor Unitario", "Cantidad", "Precio Total"};
+    public static String[][] datos = new String[10][5];
+    public static String[][] aux = new String[10][5];
     //jcombobox
-    public static String [] Tpago = {"Efectivo","Credito"};//Tipo de Pago
+    public static String[] Tpago = {"Efectivo", "Credito"};//Tipo de Pago
     //matriz de imagenes para iconos
-    public static String [] Icons = {
-    "/imgs/cuenta.png"
+    public static String[] Icons = {
+        "/imgs/cuenta.png"
     };
 }
