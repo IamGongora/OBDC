@@ -64,6 +64,13 @@ public class ValLogin {
             System.out.println("Error en insertar los datos: " + e.getMessage());
             e.printStackTrace();
             return false;
+        } finally {
+            try {
+               if(stmt != null) stmt.close();
+               if(conexion != null) conexion.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
