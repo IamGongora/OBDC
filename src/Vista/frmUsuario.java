@@ -53,12 +53,17 @@ public class frmUsuario extends javax.swing.JFrame {
         lblTel.setText("Telefono: ");
         txtTel.setText("");
         txtTel.setPreferredSize(new Dimension(150,30));
+        txtUsuario.setText("");
+        txtUsuario.setPreferredSize(new Dimension(150,30));
+        txtCont.setText("");
+        txtCont.setPreferredSize(new Dimension(150,30));
         lblDir.setText("Direccion: ");
         txtDir.setText("");
         txtDir.setPreferredSize(new Dimension(150,30));
         btnBuscar.setText("Buscar");
         btnBuscar.setToolTipText("Buscar");
-        lblPago.setText("Forma de pago");
+        lblUsuario.setText("Usuario: ");
+        lblCont.setText("Clave: ");
         
         //Jpanel de la Foto
         lblFoto.setText("Foto Cliente");
@@ -96,11 +101,7 @@ public class frmUsuario extends javax.swing.JFrame {
         btnBuscar.setToolTipText("Nueva Busqueda");
         //definir titulo tabla
         
-        //definir jcombobox
-        pago.removeAllItems();
-        for (String forma : Tpago){
-            pago.addItem(forma);
-        };
+       
         //opcion de que las cabezas sean estaticas
         scroll.setViewportView(tbDatos);
         //posicion de la tabla
@@ -141,15 +142,12 @@ public class frmUsuario extends javax.swing.JFrame {
         txtTel = new javax.swing.JTextField();
         txtDir = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        pago = new javax.swing.JComboBox<>();
-        lblPago = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtCont = new javax.swing.JTextField();
         lblCont = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
-        btnNuevo = new javax.swing.JButton();
         btnClean = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -246,10 +244,6 @@ public class frmUsuario extends javax.swing.JFrame {
 
         btnBuscar.setText("jButton1");
 
-        pago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        lblPago.setText("jLabel5");
-
         lblUsuario.setText("jLabel1");
 
         txtUsuario.setText("jTextField1");
@@ -288,15 +282,10 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfDatosLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(lblPago)
-                        .addGap(18, 18, 18)
-                        .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfDatosLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(btnBuscar))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfDatosLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(78, 78, 78)
                         .addComponent(lblCont)
                         .addGap(35, 35, 35)
                         .addComponent(txtCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -321,16 +310,15 @@ public class frmUsuario extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDir)
-                    .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPago))
+                    .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsuario)
+                .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblCont))))
+                        .addComponent(lblCont))
+                    .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblUsuario))))
         );
 
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -345,8 +333,6 @@ public class frmUsuario extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tbDatos);
-
-        btnNuevo.setText("jButton1");
 
         btnClean.setText("jButton2");
         btnClean.addActionListener(new java.awt.event.ActionListener() {
@@ -383,18 +369,17 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
-                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jfLayout.createSequentialGroup()
-                        .addComponent(btnNuevo)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnClean)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSalir)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAceptar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(jfLayout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(btnClean)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir)
+                .addGap(18, 18, 18)
+                .addComponent(btnAceptar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jfLayout.setVerticalGroup(
             jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,13 +393,12 @@ public class frmUsuario extends javax.swing.JFrame {
                     .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNuevo)
                     .addComponent(btnClean)
                     .addComponent(btnSalir)
                     .addComponent(btnAceptar))
-                .addContainerGap())
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -438,11 +422,16 @@ public class frmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
-        // TODO add your handling code here:
+        txtCC.setText("");
+        txtName.setText("");
+        txtTel.setText("");
+        txtDir.setText("");
+        txtUsuario.setText("");
+        txtCont.setText("");
     }//GEN-LAST:event_btnCleanActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -489,7 +478,6 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnClean;
     private javax.swing.JButton btnFoto;
-    private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jf;
@@ -504,12 +492,10 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblEmpresa;
     private javax.swing.JLabel lblFoto;
     private javax.swing.JLabel lblName;
-    private javax.swing.JLabel lblPago;
     private javax.swing.JLabel lblTel;
     private javax.swing.JLabel lblTelEmpresa;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JComboBox<String> pago;
     private javax.swing.JTable tbDatos;
     private javax.swing.JTextField txtCC;
     private javax.swing.JTextField txtCont;
