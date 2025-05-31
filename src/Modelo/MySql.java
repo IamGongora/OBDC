@@ -34,22 +34,19 @@ public class MySql {
 
     public static void BuscarUsuario(String datos) {
         try {
-            String Query = "SELECT * FROM " + datos;
+            String Query = "SELECT * FROM datos WHERE cedula;";
             Statement st = conexion.createStatement();
             java.sql.ResultSet resultSet;
             resultSet = st.executeQuery(Query);
             while (resultSet.next()) {
-                System.out.println("ID: "
-                        + resultSet.getString("ID") + " "
-                        + "Nombre: "
-                        + resultSet.getString("Nombre") + " "
-                        + resultSet.getString("Apellido") + " "
-                        + "Edad: " + resultSet.getString("Edad") + ""
-                        + "Sexo: " + resultSet.getString("Sexo")
-                );
+                
+                resultSet.getString("cedula");
+                resultSet.getString("nombre");
+                resultSet.getString("telefono");
+                resultSet.getString("direccion");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
+            JOptionPane.showMessageDialog(null, "Error en la adquisición de datos" + ex);
         }
     }
 

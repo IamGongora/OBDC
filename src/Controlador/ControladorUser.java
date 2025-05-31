@@ -1,5 +1,6 @@
 package Controlador;
 
+import static Modelo.MySql.BuscarUsuario;
 import Vista.frmUsuario;
 import static Vista.frmUsuario.btnBuscar;
 import static Vista.frmUsuario.btnFoto;
@@ -40,9 +41,10 @@ public class ControladorUser implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
        // Determinar qué botón fue presionado
-        if (e.getSource() == btnFoto) {
-            CargarImagen();
-        } else if (e.getSource() == btnBuscar) {
+        if (e.getSource()==btnFoto) {
+         CargarImagen();
+        }else
+            if (e.getSource() == btnBuscar) {
             buscarUsuario();
         }
     }
@@ -72,10 +74,11 @@ public class ControladorUser implements ActionListener {
     }
     public void buscarUsuario(){
      //configuracion bnt buscar
-        txtCC.setEditable(false);
+        //txtCC.setEditable(false);
         String cedula = txtCC.getText();
-        if (cedula.equals("")) {
-            JOptionPane.showMessageDialog(null, "INTRODUCIR CEDULA A CONSULTAR", "ERROR",JOptionPane.ERROR_MESSAGE);
+        if (cedula.equals("SELECT * FROM datos WHERE cedula")) {
+            //JOptionPane.showMessageDialog(null, "INTRODUCIR CEDULA A CONSULTAR", "ERROR",JOptionPane.ERROR_MESSAGE);
+            //txtCC.setText(BuscarUsuario("cedula"));
             return;
         } 
     }

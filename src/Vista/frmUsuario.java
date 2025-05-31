@@ -70,7 +70,6 @@ public class frmUsuario extends javax.swing.JFrame {
         ImageIcon oriCam = new ImageIcon(getClass().getResource("/imgs/camera.png"));
         Image EscalCam = oriCam.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnFoto.setIcon(new ImageIcon(EscalCam));
-        //btnFoto.addActionListener(ctrlUser);
         //configuracion boton aceptar
         btnAceptar.setText("");
         ImageIcon origA = new ImageIcon(getClass().getResource("/imgs/aceptar.png"));
