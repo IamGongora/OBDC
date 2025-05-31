@@ -183,6 +183,8 @@ public class frmLogin extends javax.swing.JFrame {
         
         if (ValLogin.validarUsr(usuario, clave)) {
             JOptionPane.showMessageDialog(null, "Login exitoso!");
+            frmUsuario ver = new frmUsuario();
+            ver.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Coma mierda");
         }
