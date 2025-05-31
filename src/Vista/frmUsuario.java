@@ -16,13 +16,14 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
+import Controlador.ValLogin;
 
 /**
  *
  * @author PC
  */
 public class frmUsuario extends javax.swing.JFrame {
-
+    public static ValLogin controlador = new ValLogin();
     /**
      * Creates new form frmUsuario
      */
@@ -142,6 +143,10 @@ public class frmUsuario extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         pago = new javax.swing.JComboBox<>();
         lblPago = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        txtCont = new javax.swing.JTextField();
+        lblCont = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbDatos = new javax.swing.JTable();
         btnNuevo = new javax.swing.JButton();
@@ -245,6 +250,14 @@ public class frmUsuario extends javax.swing.JFrame {
 
         lblPago.setText("jLabel5");
 
+        lblUsuario.setText("jLabel1");
+
+        txtUsuario.setText("jTextField1");
+
+        txtCont.setText("jTextField1");
+
+        lblCont.setText("jLabel1");
+
         javax.swing.GroupLayout jfDatosLayout = new javax.swing.GroupLayout(jfDatos);
         jfDatos.setLayout(jfDatosLayout);
         jfDatosLayout.setHorizontalGroup(
@@ -253,20 +266,26 @@ public class frmUsuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfDatosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblName)
-                        .addGap(27, 27, 27))
-                    .addGroup(jfDatosLayout.createSequentialGroup()
+                        .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jfDatosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblName)
+                                .addGap(27, 27, 27))
+                            .addGroup(jfDatosLayout.createSequentialGroup()
+                                .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblCC, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDir, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTel, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCC, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblDir, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTel, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jfDatosLayout.createSequentialGroup()
+                        .addComponent(lblUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jfDatosLayout.createSequentialGroup()
                         .addGap(102, 102, 102)
@@ -275,7 +294,12 @@ public class frmUsuario extends javax.swing.JFrame {
                         .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jfDatosLayout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(btnBuscar)))
+                        .addComponent(btnBuscar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jfDatosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCont)
+                        .addGap(35, 35, 35)
+                        .addComponent(txtCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jfDatosLayout.setVerticalGroup(
@@ -290,17 +314,23 @@ public class frmUsuario extends javax.swing.JFrame {
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTel)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDir)
                     .addComponent(txtDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPago))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsuario)
+                    .addGroup(jfDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblCont))))
         );
 
         tbDatos.setModel(new javax.swing.table.DefaultTableModel(
@@ -326,6 +356,11 @@ public class frmUsuario extends javax.swing.JFrame {
         });
 
         btnAceptar.setText("jButton3");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("jButton4");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -341,7 +376,9 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(jfLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addGroup(jfLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jScrollPane1))
                     .addGroup(jfLayout.createSequentialGroup()
                         .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,13 +404,11 @@ public class frmUsuario extends javax.swing.JFrame {
                     .addGroup(jfLayout.createSequentialGroup()
                         .addComponent(jfCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(jfLayout.createSequentialGroup()
-                        .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)))
+                        .addComponent(jfDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jfFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 141, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addGroup(jfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo)
                     .addComponent(btnClean)
@@ -392,7 +427,7 @@ public class frmUsuario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -409,6 +444,10 @@ public class frmUsuario extends javax.swing.JFrame {
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCleanActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        controlador.insertDatos(txtCC.getText(), txtName.getText(), txtTel.getText(), txtDir.getText(), txtUsuario.getText(), txtCont.getText());
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -459,6 +498,7 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jfFoto;
     private javax.swing.JLabel lblCC;
     private javax.swing.JLabel lblCiudad;
+    private javax.swing.JLabel lblCont;
     private javax.swing.JLabel lblDir;
     private javax.swing.JLabel lblDirEmpresa;
     private javax.swing.JLabel lblEmpresa;
@@ -468,11 +508,14 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblTel;
     private javax.swing.JLabel lblTelEmpresa;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JComboBox<String> pago;
     private javax.swing.JTable tbDatos;
     private javax.swing.JTextField txtCC;
+    private javax.swing.JTextField txtCont;
     private javax.swing.JTextField txtDir;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtTel;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

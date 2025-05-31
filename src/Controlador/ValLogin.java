@@ -45,6 +45,27 @@ public class ValLogin {
             }
         }
     }
+    
+    public static boolean insertDatos(String cedula, String nombre, String tel, String dir, String usuario, String clave) {
+        MySqlConecction sql = new MySqlConecction();
+        try {
+            conexion = sql.conectar();
+            sqlQuery = "INSERT INTO datos VALUES(?, ?, ?, ?, ?, ?)";
+            stmt = conexion.prepareStatement(sqlQuery);
+            stmt.setString(1, cedula);
+            stmt.setString(2, nombre);
+            stmt.setString(3, tel);
+            stmt.setString(4, dir);
+            stmt.setString(5, usuario);
+            stmt.setString(6, clave);
+            int filas = stmt.executeUpdate();
+            return filas > 0;
+        } catch(SQLException e) {
+            System.out.println("Error en insertar los datos: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public ValLogin() {
         
