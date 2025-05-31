@@ -17,27 +17,37 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 import Controlador.ValLogin;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 /**
  *
  * @author PC
  */
 public class frmUsuario extends javax.swing.JFrame {
-    
-    JFileChooser file = new JFileChooser();
     public static ValLogin controlador = new ValLogin();
+    JFileChooser Ofd = new JFileChooser();
+    public static URL url;
+    public static File ruta;
+    int _alto = 32, _ancho = 32;
+    private String rutaImagenSeleccionada;
     /**
      * Creates new form frmUsuario
      */
     public frmUsuario() {
         initComponents();
-        JTable tbDatos = new JTable (datos,titulos);
+        setTitle("PANEL DE USUARIOS");
+        JTable tbDatos = new JTable(datos, titulos);
         JFrame jf = new JFrame("Factura de venta");
         jf.setLayout(null);//ELIMINAMOS EL LAYOUT
         jf.setVisible(true);
-        Dimension d = new Dimension ();
-        JScrollPane scroll = new JScrollPane ();
+        Dimension d = new Dimension();
+        JScrollPane scroll = new JScrollPane();
 
         //jf.setVisible(true);
         //Cabecera
@@ -49,29 +59,35 @@ public class frmUsuario extends javax.swing.JFrame {
         //Datos
         lblCC.setText("Cedula: ");
         txtCC.setText("");
-        txtCC.setPreferredSize(new Dimension(150,30));
+        txtCC.setPreferredSize(new Dimension(150, 30));
         lblName.setText("Nombre Completo: ");
         txtName.setText("");
-        txtName.setPreferredSize(new Dimension(150,30));
+        txtName.setPreferredSize(new Dimension(150, 30));
         lblTel.setText("Telefono: ");
         txtTel.setText("");
-        txtTel.setPreferredSize(new Dimension(150,30));
+        txtTel.setPreferredSize(new Dimension(150, 30));
         txtUsuario.setText("");
-        txtUsuario.setPreferredSize(new Dimension(150,30));
+        txtUsuario.setPreferredSize(new Dimension(150, 30));
         txtCont.setText("");
-        txtCont.setPreferredSize(new Dimension(150,30));
+        txtCont.setPreferredSize(new Dimension(150, 30));
         lblDir.setText("Direccion: ");
         txtDir.setText("");
-        txtDir.setPreferredSize(new Dimension(150,30));
+        txtDir.setPreferredSize(new Dimension(150, 30));
         btnBuscar.setText("Buscar");
         btnBuscar.setToolTipText("Buscar");
         lblUsuario.setText("Usuario: ");
         lblCont.setText("Clave: ");
-        
+
         //Jpanel de la Foto
-        lblFoto.setText("Foto Cliente");
+        lblFoto.setText("");
+        lblFoto.setToolTipText("Aqui va foto del cliente");
         jfFoto.setBorder(new LineBorder(Color.black));
-        
+        //configuracion boton FileChooser
+        btnFoto.setText("");
+        btnFoto.setToolTipText("Carga la foto");
+        ImageIcon oriCam = new ImageIcon(getClass().getResource("/imgs/camera.png"));
+        Image EscalCam = oriCam.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
+        btnFoto.setIcon(new ImageIcon(EscalCam));
         //configuracion boton aceptar
         btnAceptar.setText("");
         ImageIcon origA = new ImageIcon(getClass().getResource("/imgs/aceptar.png"));
@@ -84,9 +100,6 @@ public class frmUsuario extends javax.swing.JFrame {
         Image EscalC = origC.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         btnClean.setIcon(new ImageIcon(EscalC));
         btnClean.setToolTipText("Limpiar busqueda");
-        //configuracion boton nuevo
-        ImageIcon origN = new ImageIcon(getClass().getResource("/imgs/nuevo.png"));
-        Image EscalN = origN.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
         //configuracion boton salir
         btnSalir.setText("");
         ImageIcon origS = new ImageIcon(getClass().getResource("/imgs/salir.png"));
@@ -100,17 +113,14 @@ public class frmUsuario extends javax.swing.JFrame {
         btnBuscar.setIcon(new ImageIcon(EscalB));
         btnBuscar.setToolTipText("Nueva Busqueda");
         //definir titulo tabla
-        
-       
+
         //opcion de que las cabezas sean estaticas
         scroll.setViewportView(tbDatos);
         //posicion de la tabla
         scroll.setBounds(10, 330, 685, 150);
         //posicion de la grilla
         jf.add(scroll);
-        
-         
-        
+
     }
 
     /**
@@ -427,7 +437,7 @@ public class frmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-         System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnCleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCleanActionPerformed
@@ -440,11 +450,36 @@ public class frmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCleanActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        controlador.insertDatos(txtCC.getText(), txtName.getText(), txtTel.getText(), txtDir.getText(), txtUsuario.getText(), txtCont.getText(), lblFoto.getText());
+        controlador.insertDatos(txtCC.getText(), txtName.getText(), txtTel.getText(), txtDir.getText(), txtUsuario.getText(), txtCont.getText(), rutaImagenSeleccionada);
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoActionPerformed
-        file.setVisible(true);
+
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG, PNG & GIF",
+                "jpg", "png", "gif");
+        Ofd.setFileFilter(filtroImagen);
+        int r = Ofd.showOpenDialog(null);
+        if (r == JFileChooser.APPROVE_OPTION) {
+            try {
+                File f = Ofd.getSelectedFile();
+                rutaImagenSeleccionada = f.getAbsolutePath();
+                String lnom = (f.getName());
+                String lpeso = ("" + f.length());
+                JOptionPane.showMessageDialog(rootPane, lnom + " , " + lpeso);
+                url = Ofd.getSelectedFile().toURL();//deprecated ==> Obsoleto
+                ImageIcon img = new ImageIcon(url);
+                ImageIcon mitad = new ImageIcon(img.getImage().getScaledInstance(lblFoto.getWidth(),
+                        lblFoto.getHeight(),
+                        Image.SCALE_DEFAULT));
+                // Icon fondo=new ImageIcon(imagen1.getImage().getScaledInstance(lblFoto.getWidth(),lblFoto.getHeight(),Image.SCALE_DEFAULT))
+                lblFoto.setIcon(mitad);
+                this.repaint();
+            } catch (MalformedURLException x) {
+                // TODO Auto-generated catch block
+                x.printStackTrace();
+            }
+
+        }   
     }//GEN-LAST:event_btnFotoActionPerformed
 
     /**

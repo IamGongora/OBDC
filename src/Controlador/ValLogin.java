@@ -67,7 +67,7 @@ public class ValLogin {
             stmt.setString(6, clave);
             File archivo = new File(rutaImg);
             fis = new FileInputStream(archivo);
-            stmt.setBinaryStream(3, fis, (int) archivo.length());
+            stmt.setBinaryStream(7, fis, (int) archivo.length());
             int filas = stmt.executeUpdate();
             return filas > 0;
         } catch(SQLException e) {
@@ -75,7 +75,9 @@ public class ValLogin {
             e.printStackTrace();
             return false;
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "No se puedo subir la imagen");
+            JOptionPane.showMessageDialog(null, "No se encontro el archivo");
+            ex.printStackTrace();
+            return false;
         } finally {
             try {
                if(stmt != null) stmt.close();
