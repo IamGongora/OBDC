@@ -82,11 +82,8 @@ public class frmUsuario extends javax.swing.JFrame {
         btnClean.setIcon(new ImageIcon(EscalC));
         btnClean.setToolTipText("Limpiar busqueda");
         //configuracion boton nuevo
-        btnNuevo.setText("");
         ImageIcon origN = new ImageIcon(getClass().getResource("/imgs/nuevo.png"));
         Image EscalN = origN.getImage().getScaledInstance(24, 24, Image.SCALE_DEFAULT);
-        btnNuevo.setIcon(new ImageIcon(EscalN));
-        btnNuevo.setToolTipText("Nueva Busqueda");
         //configuracion boton salir
         btnSalir.setText("");
         ImageIcon origS = new ImageIcon(getClass().getResource("/imgs/salir.png"));
