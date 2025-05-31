@@ -17,12 +17,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 import Controlador.ValLogin;
+import javax.swing.JFileChooser;
 
 /**
  *
  * @author PC
  */
 public class frmUsuario extends javax.swing.JFrame {
+    
+    JFileChooser file = new JFileChooser();
     public static ValLogin controlador = new ValLogin();
     /**
      * Creates new form frmUsuario
@@ -194,6 +197,11 @@ public class frmUsuario extends javax.swing.JFrame {
         lblFoto.setText("jLabel1");
 
         btnFoto.setText("jButton1");
+        btnFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFotoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jfFotoLayout = new javax.swing.GroupLayout(jfFoto);
         jfFoto.setLayout(jfFotoLayout);
@@ -432,8 +440,12 @@ public class frmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCleanActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        controlador.insertDatos(txtCC.getText(), txtName.getText(), txtTel.getText(), txtDir.getText(), txtUsuario.getText(), txtCont.getText());
+        controlador.insertDatos(txtCC.getText(), txtName.getText(), txtTel.getText(), txtDir.getText(), txtUsuario.getText(), txtCont.getText(), lblFoto.getText());
     }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void btnFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFotoActionPerformed
+        file.setVisible(true);
+    }//GEN-LAST:event_btnFotoActionPerformed
 
     /**
      * @param args the command line arguments
